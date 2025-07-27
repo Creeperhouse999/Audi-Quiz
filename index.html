@@ -709,6 +709,9 @@
         }
 
         function showResults() {
+            // Play next question sound for quiz completion
+            sounds.nextQuestion.play().catch(e => console.log('Audio play failed:', e));
+            
             document.querySelector('.quiz-container').style.display = 'none';
             const results = document.getElementById('results');
             results.classList.add('show');
