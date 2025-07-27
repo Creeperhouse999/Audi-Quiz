@@ -653,14 +653,14 @@
         }
 
         function nextQuestion() {
-            // Play next question sound
-            sounds.nextQuestion.play().catch(e => console.log('Audio play failed:', e));
-            
             if (currentQuestionIndex < questions.length - 1) {
+                // Play next question sound only when going to next question
+                sounds.nextQuestion.play().catch(e => console.log('Audio play failed:', e));
                 currentQuestionIndex++;
                 showQuestion();
                 updateProgress();
             } else {
+                // No sound when ending quiz
                 showResults();
             }
         }
