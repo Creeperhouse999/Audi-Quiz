@@ -738,9 +738,6 @@
         }
 
         function restartQuiz() {
-            // Play click sound
-            sounds.click.play().catch(e => console.log('Audio play failed:', e));
-            
             currentQuestionIndex = 0;
             score = 0;
             selectedAnswer = null;
