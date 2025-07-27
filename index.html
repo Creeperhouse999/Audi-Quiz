@@ -608,16 +608,12 @@
         
         // Sound effects
         const sounds = {
-            click: new Audio('click.mp3'),
             correct: new Audio('correct.mp3'),
             wrong: new Audio('wrong.mp3')
         };
 
         function selectAnswer(index) {
             if (answered) return;
-            
-            // Play click sound
-            sounds.click.play().catch(e => console.log('Audio play failed:', e));
             
             const options = document.querySelectorAll('.option');
             options.forEach(opt => opt.classList.remove('selected'));
@@ -652,9 +648,6 @@
         }
 
         function nextQuestion() {
-            // Play click sound
-            sounds.click.play().catch(e => console.log('Audio play failed:', e));
-            
             if (currentQuestionIndex < questions.length - 1) {
                 currentQuestionIndex++;
                 showQuestion();
@@ -737,9 +730,6 @@
         }
 
         function restartQuiz() {
-            // Play click sound
-            sounds.click.play().catch(e => console.log('Audio play failed:', e));
-            
             currentQuestionIndex = 0;
             score = 0;
             selectedAnswer = null;
